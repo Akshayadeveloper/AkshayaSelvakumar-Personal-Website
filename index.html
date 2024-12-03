@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Freelancer Portfolio</title>
+  <link rel="stylesheet" href="./style.css"> 
+    <!-- font links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+ <!-- AOS CSS (for animations) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <style>
+  body {
+  font-family: 'Arial', sans-serif;
+  background-image: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
+            color: #fff;
+        }
+  .fab{
+    background-image: linear-gradient(90.5deg, rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6%);
+            background-clip: text;
+            -webkit-background-clip: text; /* For Safari and Chrome */
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+  }
+  .fas{
+    background-image: linear-gradient(90.5deg, rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6%);
+            background-clip: text;
+            -webkit-background-clip: text; /* For Safari and Chrome */
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+  }
+  </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <h1 data-aos="fade-up">Akshayaselvakumar</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Expert in video editing, Photoshop, logo design, web design, NFT creation, tutoring, and more.</p>
+        <a href="#" class="btn btn-primary" id="hire" data-aos="fade-up" data-aos-delay="400">Hire Me <i class="fa-duotone fa-solid fa-fire-flame-curved" style="color:#736EFE;"></i></a>
+    </section>
+    <!-- About Section -->
+    <section class="about text-center">
+        <div class="profile-picture-holder">
+            <img src="Video.Guru_20241203_125958834.gif" alt="Profile Picture">
+        </div>
+        <h2 data-aos="fade-up">About Me</h2>
+        <p data-aos="fade-up" data-aos-delay="200">I am a creative freelancer with expertise in video editing, Photoshop, NFT creation, web design, and more. Awarded a gold medal for academic excellence in Computer Science at Bharathiar University.</p>
+    </section>
+<!-- Portfolio Gallery Section -->
+    <section class="portfolio-gallery" data-aos="fade-up">
+    <h2>Portfolio Gallery <i class="fa-duotone fa-solid fa-rectangle-history-circle-user fa-beat-fade"></i></h2>
+    <div class="gallery-grid">
+       <div class="gallery-item" onclick="openIframeWithContent('https://www.youtube.com/@Glory-Akshaya', 'https://images.unsplash.com/photo-1675049603723-37dfc5eed92f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Click » 📽️ editing skills.')">
+                <img src="https://images.unsplash.com/photo-1675049603723-37dfc5eed92f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 1">
+                <div class="gallery-overlay">
+                    <h3>Photo Video Editing</h3>
+                    <p>Professional video editing with transitions and effects</p>
+                </div>
+            </div>       
+        <div class="gallery-item" onclick="openIframeWithContent('https://medibang.com/u/Sukuna', 'ezgif-frame-004.jpg', '» 3D Logo & Poster design ')">
+                <img src="ezgif-frame-004.jpg" alt="Project 2">
+                <div class="gallery-overlay">
+                <h3>3D Logo & Poster Design</h3>
+                <p>Brand identity</p>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openIframeWithContent('https://akshayadeveloper.blogspot.com/', 'https://img.freepik.com/free-photo/beautiful-anime-flowers-cartoon-scene_23-2151035223.jpg?t=st=1733117887~exp=1733121487~hmac=39a66a241739cf6dec00233a760e3ac20889cfdb72c858215f678ddc912b3e97&w=740', 'Click » novel writing.')">              
+            <img src="https://img.freepik.com/free-photo/beautiful-anime-flowers-cartoon-scene_23-2151035223.jpg?t=st=1733117887~exp=1733121487~hmac=39a66a241739cf6dec00233a760e3ac20889cfdb72c858215f678ddc912b3e97&w=740" alt="Project 3">
+            <div class="gallery-overlay">
+                <h3>Content Writing</h3>
+                <p>Novel and Research writing</p>
+            </div>
+        </div>
+      <div class="gallery-item" onclick="openIframeWithContent('https://github.com/Akshayadeveloper', 'https://img.freepik.com/premium-psd/membership-landing-page_23-2149176225.jpg?w=740', 'Click » Branded web design ')">              
+            <img src="https://img.freepik.com/premium-psd/membership-landing-page_23-2149176225.jpg?w=740" alt="Project 4">
+            <div class="gallery-overlay">
+                <h3>Website Design</h3>
+                <p>Branded Website Templates</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Iframe Modal -->
+    <div class="iframe-modal" id="iframeModal">
+        <div class="iframe-content" id="iframeContent">
+            <div class="iframe-container">
+                <img id="iframeImage" src="" alt="Project Image">
+                <div class="iframe-text" id="iframeText">Click » for demo</div>
+            </div>
+            <div class="iframe-buttons">
+                <button class="iframe-button" onclick="zoomIn()">+</button>
+                <button class="iframe-button" onclick="zoomOut()">-</button>
+                <button class="iframe-button iframe-elaborate" onclick="elaborateIframe()">»</button>
+                <button class="iframe-button iframe-close" onclick="closeIframe()">x</button>
+            </div>
+        </div>
+    </div>
+  
+  <!--My OpenSource Project-->
+  <section class="OpenSource text-center" data-aos="fade-up">
+    <div class="container text-center">
+      <h2 class="raw text-center" data-aos="fade-up">My OpenSource Project</h2>
+      <div class="galleryO OS">
+  <div class="itemO" onclick="openLightbox('Photo Frame Generator App', 'https://akshayadeveloper.github.io/Photo-Frame-Generator-App-/', 'photo-collage.png.jpeg')">
+    <img src="photo-collage.png.jpeg" alt="Product 1">
+  </div>
+  <div class="itemO" onclick="openLightbox('Instant PDF Reader', 'https://akshayadeveloper.github.io/Instant-PDF-Reader/index.html', 'https://pikaso.cdnpk.net/private/production/1157773404/render.jpeg?token=exp=1758931200~hmac=98a3e3340a73de221a9f5ddde8de3a8893003a02fe15f8a340eb36f51d9dd8f6')">
+    <img src="https://pikaso.cdnpk.net/private/production/1157773404/render.jpeg?token=exp=1758931200~hmac=98a3e3340a73de221a9f5ddde8de3a8893003a02fe15f8a340eb36f51d9dd8f6" alt="Product 2">
+  </div>
+  <div class="itemO" onclick="openLightbox('Neural Networks', 'https://akshayadeveloper.github.io/Neural-networks/index.html', 'https://miro.medium.com/v2/resize:fit:1400/1*1oTDnw0B32cdT0J1fBmKWg.gif')">
+    <img src="https://miro.medium.com/v2/resize:fit:1400/1*1oTDnw0B32cdT0J1fBmKWg.gif" alt="Product 3">
+  </div>
+  <div class="itemO" onclick="openLightbox('Tour Budget Planner App', 'https://akshayadeveloper.github.io/Tour-Budget-Planner-App/index.html', 'https://pikaso.cdnpk.net/private/production/1157644043/render.jpeg?token=exp=1758931200~hmac=8c603ab41cf8e10da3dc09e70dd739b4f112eef8ccfdc053724d95b36523b141')">
+    <img src="https://pikaso.cdnpk.net/private/production/1157644043/render.jpeg?token=exp=1758931200~hmac=8c603ab41cf8e10da3dc09e70dd739b4f112eef8ccfdc053724d95b36523b141" alt="Product 4">  
+</div>
+   <div class="itemO" onclick="openLightbox('BTS-Play', 'https://akshayadeveloper.github.io/BTS-Play/index.html', 'https://raw.githubusercontent.com/Akshayadeveloper/BTS-Play/refs/heads/main/Preview%E2%80%94BTS%20play%20music.jpg')">
+    <img src="https://raw.githubusercontent.com/Akshayadeveloper/BTS-Play/refs/heads/main/Preview%E2%80%94BTS%20play%20music.jpg" alt="Product 5">  
+</div> 
+  <div class="itemO" onclick="openLightbox('Memory Card Game', 'https://akshayadeveloper.github.io/Memory-card-game-interactive/index.html', 'https://img.freepik.com/premium-photo/spacethemed-artwork-with-galaxy-star-accents_1061150-127199.jpg?w=740')">
+    <img src="https://img.freepik.com/premium-photo/spacethemed-artwork-with-galaxy-star-accents_1061150-127199.jpg?w=740" alt="Product 6">  
+</div>
+  <div class="itemO" onclick="openLightbox('AI Text to Speech ', 'https://akshayadeveloper.github.io/text-to-speech/index.html', 'https://img.freepik.com/free-photo/rendering-smart-home-device_23-2151039369.jpg?t=st=1733035823~exp=1733039423~hmac=66b60dbeed39aec1fdba6f4124d59c1d8835145c092df2c484a0c04c2099b391&w=740')">
+    <img src="https://img.freepik.com/free-photo/rendering-smart-home-device_23-2151039369.jpg?t=st=1733035823~exp=1733039423~hmac=66b60dbeed39aec1fdba6f4124d59c1d8835145c092df2c484a0c04c2099b391&w=740" alt="Product 7">  
+</div>
+   <div class="itemO" onclick="openLightbox('Automatic Shopping List', 'https://akshayadeveloper.github.io/Groceries-Shop-List-Automatic/index.html', 'https://img.freepik.com/free-photo/online-shopping-concept_23-2151896847.jpg?t=st=1733041701~exp=1733045301~hmac=363306f4725e8126b8c3d8d40915e4f334462e60463e50f9c9dacb1088759754&w=740')">
+    <img src="https://img.freepik.com/free-photo/online-shopping-concept_23-2151896847.jpg?t=st=1733041701~exp=1733045301~hmac=363306f4725e8126b8c3d8d40915e4f334462e60463e50f9c9dacb1088759754&w=740" alt="Product 8">  
+</div>
+  <div class="itemO" onclick="openLightbox('Random Gradient App', 'https://akshayadeveloper.github.io/Random-Image-color-changer-app/Randomly-ImageColor-generator-App.html', 'bloggif_674c443bec900.gif')">
+    <img src="bloggif_674c443bec900.gif" alt="Product 9">  
+</div>  
+ </div> 
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-content">
+    <span class="close-btn" onclick="closeLightbox()">×</span>
+    <img id="lightbox-image" src="" alt="">
+    <p id="lightbox-text"></p>
+    <a id="lightbox-link" href="#" target="_blank">Learn more</a>
+  </div>
+</div>
+  </section>
+  
+  <!-- My Expertise -->
+  <section class="expertise text-center py-5" data-aos="fade-up">
+        <div class="container text-center">
+            <h2  class="raw text-center"data-aos="fade-up">My Expertise </h2>
+            
+<div class="carousel-container text-center">
+    <div class="carousel-card left" id="card1">
+        <iframe src="https://www.youtube.com/embed/1aZ6EbMVu24?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="carousel-card center" id="card2"><iframe src="https://www.youtube.com/embed/z6dfHVGXpnQ?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="carousel-card right" id="card3"><iframe src="https://www.youtube.com/embed/y6DgyJELHHI?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+    </div> </div> 
+  </section>
+    
+     <!-- Portfolio Section -->
+
+    <section class="portfolio">
+        <div class="container text-center">
+            <h2  class="raw"data-aos="fade-up">My Creativity Works</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-photo/digital-art-inmersive-exhibition_23-2151428497.jpg?t=st=1733129249~exp=1733132849~hmac=1fcd81f7ad9f2a22a1e46769ab8d70fdfba31640377b61e47eefd2792a639b80&w=740" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"><i class="fa-solid fa-video icon"></i> View <a href="https://www.youtube.com/@AkshayaDeveloper"></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <img src="https://dthezntil550i.cloudfront.net/qv/latest/qv2404161651264660025893296/1280_960/9218ee9f-e6ce-4bde-86eb-58134f88a0ff.png" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>   
+                            <p class="card-text"><img src="https://cdn.prod.website-files.com/6511456e453d26d6b4ae76b9/65c25eca5584401a98c24359_punchev-studio-industry-ux-ui-nft.webp" alt="NFT Creations" width="40" height="40">Medibang:View
+                             <a href="https://medibang.com/u/Sukuna"></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-vector/gourmet-food-instagram-story_23-2148653559.jpg?t=st=1733134339~exp=1733137939~hmac=9e95ab6ea1a42c1c2f868e064d1a0bf550f1480c497eba2094fc93e5ab4cf1eb&w=740" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">Web Design:View <a href="https://github.com/Akshayadeveloper?tab=repositories"></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Testimonials Section -->
+    <section class="testimonials text-center">
+        <h2 class="raw" data-aos="fade-up">Testimonials</h2>
+        <p data-aos="fade-right" data-aos-delay="200">"Delivered high-quality designs that exceeded my expectations!" - Client 1</p>
+        <p data-aos="fade-right" data-aos-delay="400">"Amazing work! Will hire again." - Client 2</p>
+    </section>
+
+    <!-- Crypto Payment Section -->
+    <section class="crypto-payment text-center">
+        <div class="container">
+            <h2 class="raw" data-aos="fade-up">Payment Gateways</h2>
+            <div class="wallets" data-aos="fade-up">
+<p>Paypal| Payoneer| Paytm| Gpay| Binance| Metamask| TrustWallet| Cwallet| FaucetPay| UnionPay| WechatPay</p>           
+            </div>
+        </div>
+    </section>
+      <section class="contact-section" data-aos="fade-up">
+        <div class="container text-center">
+        <h2 class="raw">Let's' Connect</h2>
+        <a href="mailto:mayaever0711@gmail.com" class="btn" style="color:white";>Email:akshayaselvakumar23@gmail.com</a>
+        <div class="social-links">
+            <a href="https://github.com/Akshayadeveloper"><i class="fab fa-github"></i></a>
+            <a href="https://youtube.com/@GloryOfMerlin"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/akshaya-s-5b3461278"><i class="fab fa-linkedin"></i></a>
+            <a href="https://codepen.io/Akshaya-developer"><i class="fab fa-codepen"></i></a>
+            <a href="https://linktr.ee/akshayadeveloper"><i class="fas fa-link"></i></a>
+            <a href="https://akshayadeveloper.blogspot.com"><i class="fab fa-blogger"></i></a>
+          <a href="https://t.me/Onlyone_Earn"><i class="fab fa-telegram"></i></a>
+        </div>
+    </section>
+      <!-- Explore More Section -->
+    <section class="explore-more text-center">
+        <div class="container">
+            <h2 class="raw" data-aos="fade-up">Explore More</h2>
+            <p>
+               <a href="https://medibang.com/u/Sukuna"><img src="https://media.imgcdn.org/repo/2023/06/medibang-paint-pro/6494179e4e314-medibang-paint-pro-Icon.webp" alt="MediBang Paint Pro Logo" width="20" height="20"></a> |
+               <a href="https://akshayadeveloper.blogspot.com"><i class="fab fa-blogger"></i></a> |
+               <a href="https://www.linkedin.com/posts/akshaya-s-5b3461278_design-ui-ux-activity-7136971823845437441-QdKM?utm_source=share&utm_medium=member_desktop"><i class="fab fa-linkedin"></i></a> |
+               <a href="https://codepen.io/Akshaya-developer"><i class="fab fa-codepen"></i></a> |
+               <a href="https://github.com/Akshayadeveloper"><i class="fab fa-github"></i></a>
+            </p>
+        </div>
+    </section>
+                 <div class="container text-center">
+            
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+    <!-- AOS JS (for animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+<!-- Add this to your existing script section -->
+<script>
+    // Back to top button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Handle browser back button
+    window.onpopstate = function(event) {
+        if (document.referrer.includes(window.location.hostname)) {
+            history.go(-1);
+        }
+    };
+   
+</script>
+    <script>
+        function openIframeWithContent(link, imageSrc, textContent) {
+            document.getElementById("iframeImage").src = imageSrc;
+            document.getElementById("iframeText").innerText = textContent;
+            document.getElementById("iframeModal").style.display = "flex";
+            document.getElementById("iframeModal").setAttribute("data-link", link);
+        }
+
+        function closeIframe() {
+            document.getElementById("iframeModal").style.display = "none";
+        }
+
+        function elaborateIframe() {
+            const link = document.getElementById("iframeModal").getAttribute("data-link");
+            window.open(link, "_blank");
+        }
+
+        function zoomIn() {
+            let iframeImage = document.getElementById("iframeImage");
+            iframeImage.style.transform = "scale(1.2)";
+            iframeImage.style.transition = "transform 0.3s ease-in-out";
+        }
+
+        function zoomOut() {
+            let iframeImage = document.getElementById("iframeImage");
+            iframeImage.style.transform = "scale(1)";
+            iframeImage.style.transition = "transform 0.3s ease-in-out";
+        }
+    </script>
+<script>
+        // Back to Top button functionality
+        const backToTopButton = document.createElement('a');
+        backToTopButton.classList.add('back-to-top');
+        backToTopButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
+        document.body.appendChild(backToTopButton);
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        };
+
+        backToTopButton.onclick = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
+<script>
+    // JavaScript to handle card position swapping on hover in My Expertise section
+       const card1 = document.getElementById('card1');
+    const card2 = document.getElementById('card2');
+    const card3 = document.getElementById('card3');
+
+    // Function to rotate the cards
+    function rotateCards() {
+        // Swap class positions in a circular fashion
+        if (card1.classList.contains('left')) {
+            card1.classList.replace('left', 'center');
+            card2.classList.replace('center', 'right');
+            card3.classList.replace('right', 'left');
+        } else if (card1.classList.contains('center')) {
+            card1.classList.replace('center', 'right');
+            card2.classList.replace('right', 'left');
+            card3.classList.replace('left', 'center');
+        } else if (card1.classList.contains('right')) {
+            card1.classList.replace('right', 'left');
+            card2.classList.replace('left', 'center');
+            card3.classList.replace('center', 'right');
+        }
+    }
+
+    // Add hover event listeners to each card
+    card1.addEventListener('mouseenter', rotateCards);
+    card2.addEventListener('mouseenter', rotateCards);
+    card3.addEventListener('mouseenter', rotateCards);
+</script>
+     <script>
+          //Opensource Project
+  function openLightbox(text, link, imageSrc) {
+    document.getElementById('lightbox-text').innerText = text;
+    document.getElementById('lightbox-link').href = link;
+    document.getElementById('lightbox-image').src = imageSrc;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+<footer class="text-center">
+        <p>Connect with me on <a href="https://github.com/yourprofile"><i class="fab fa-github"></i></a></p>
+        <p>&copy; 2024 Akshayaselvakumar. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
