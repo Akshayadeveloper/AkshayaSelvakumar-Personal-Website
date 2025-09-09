@@ -1,440 +1,790 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshaya Selvakumar - Creative Portfolio</title>
-    <!-- Tailwind CSS CDN for utility-first styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Inter (main) and DM Mono (accent/tech) -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Base styles for body, ensuring smooth scrolling and font application */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827; /* Fallback for gradient */
-            color: #e5e7eb; /* Light gray text */
-            scroll-behavior: smooth;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Freelancer Portfolio</title>
+  <link rel="stylesheet" href="./styles.css"> 
+    <!-- font links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+ <!-- AOS CSS (for animations) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Tidio chatbot -->
+    <script src="//code.tidio.co/tp23yvgn6jjumyy7zzlsl45sotf9ycxh.js" async></script>
+  <style>     
+  body {
+        font-family: 'Arial', sans-serif;
+        background-image: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
+        color: #fff;
+        }
+  .fab{
+    background-image: linear-gradient(90.5deg, rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6%);
+            background-clip: text;
+            -webkit-background-clip: text; /* For Safari and Chrome */
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+  }
+  .fas{
+    background-image: linear-gradient(90.5deg, rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6%);
+            background-clip: text;
+            -webkit-background-clip: text; /* For Safari and Chrome */
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+  }
+  
+ /* Need to paste */  
+  h2{
+            font-size: 2em;
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
-        /* Custom font application for DM Mono */
-        .font-dm-mono {
-            font-family: 'DM Mono', monospace;
+/* New styles */
+.hero {
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: #ffffff;
+            padding: 50px 0;
+        }
+        .about, .portfolio-gallery, .testimonials, .crypto-payment, .contact, .explore-more {
+            padding: 50px 0;
+        }
+        .portfolio .card {
+            margin: 20px;
+            transition: transform 0.3s ease-in-out;
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);          
+        }
+        .portfolio .card:hover {
+            transform: scale(1.05);
+             background-image: url("https://cdn.pixabay.com/animation/2023/06/06/06/51/06-51-32-766_512.gif");
+        }
+        .wallets img {
+            margin: 10px;
+            width: 50px;
+        }
+        /* Profile Picture with Glow Effect */
+        .profile-picture-holder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            position: relative;
+            background-image: linear-gradient(90.5deg, rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6%);
+            padding: 5px; /* For glow to show around the image */
+            transition: box-shadow 0.5s ease, background-position 2s ease-in-out;
+            background-size: 400% 400%; /* For moving gradient effect */
+            animation: gradientGlow 3s infinite alternate;
+        }
+        .profile-picture-holder img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
         }
 
-        /* Nothing Phone inspired glyph animation styles */
-        .glyph-container {
+        /* Keyframes for glowing gradient effect */
+        @keyframes gradientGlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+     /* Text gradient */
+        h1{
+          font-size: 2em;
+          background-image: linear-gradient(90.5deg, rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6%);
+            background-clip: text;
+            -webkit-background-clip: text; /* For Safari and Chrome */
+            color: transparent;
+            -webkit-text-fill-color: transparent;}
+        h2{
+            font-size: 2em;
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .raw {
+            font-size: 2em;
+            background-image: linear-gradient(135deg, #2AFADF 10%, #4C83FF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+          #hire {
+            background-image: linear-gradient(135deg, #2AFADF 10%, #4C83FF 100%);
+            box-shadow: #000019 0 0, rgba(0, 0, 25, .3) 0 9px 21px, rgba(73, 2, 57, .2) 0 -3px inset;
+        }
+       a{ 
+         color:#fff;
+       } 
+  /* top to bottom button */
+        .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 999;
+    }
+    .back-to-top.visible {
+        opacity: 1;
+        cursor: pointer;
+    }
+    .portfolio-gallery {
+        padding: 4rem 2rem;
+        
+    }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+   .gallery-item img {
+        
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+    .gallery-overlay {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        color: white;
+        padding: 1rem;
+        transition: bottom 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay {
+        bottom: 0;
+    }
+    /* Iframe Modal Styles with Glowing Border for My portfolio Section */
+        .iframe-modal{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .iframe-content {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+        }
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .iframe-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .iframe-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .iframe-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+        .iframe-button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+        .iframe-button.iframe-elaborate {
+            background-color: #ff9800;
+        }
+        .iframe-button.iframe-close {
+            background-color: red;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+         
+/* Carousel container styling for my expertise section*/
+        .carousel-container {
+            position: relative;
+            width: 80vw;
+            height: 50vh;
+            max-width: 600px;
+            max-height: 400px;
             display: flex;
-            gap: 6px; /* Spacing between glyph bars */
-            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
         }
 
-        .glyph-bar {
-            width: 30px; /* Width of each bar */
-            height: 5px; /* Height of each bar */
-            background-color: #9ca3af; /* Muted gray for glyphs */
-            border-radius: 2px; /* Slightly rounded bars */
-            animation: glyph-pulse 2s infinite ease-in-out;
+        /* Individual card styling */
+        .carousel-card {
+            position: absolute;
+            width: 30vw;
+            height: 45vh;
+            max-width: 200px;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: #333;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        /* Card positions */
+        .left { transform: translateX(-35vw); }
+        .center { transform: scale(1.1); z-index: 2; box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5); }
+        .right { transform: translateX(35vw); }
+
+        /* Glow effect for center card */
+        .carousel-card.center {
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
         }
 
-        /* Staggered animation for each glyph bar */
-        .glyph-bar:nth-child(1) { animation-delay: 0s; }
-        .glyph-bar:nth-child(2) { animation-delay: 0.2s; }
-        .glyph-bar:nth-child(3) { animation-delay: 0.4s; }
-        .glyph-bar:nth-child(4) { animation-delay: 0.6s; }
-
-        @keyframes glyph-pulse {
-            0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
-            50% { opacity: 1; transform: scaleY(1); }
+        /* Styling iframe for the video */
+        .carousel-card iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
         }
 
-        /* Modal styles for smooth transitions */
-        .modal {
-            transition: opacity 0.25s ease, visibility 0.25s ease;
-        }
-        .modal-content {
-            transition: transform 0.25s ease;
-        }
-        .modal.open {
-            opacity: 1;
-            visibility: visible;
-        }
-        .modal.open .modal-content {
-            transform: scale(1) translateY(0);
-        }
-
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1f2937; /* Dark gray track */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4b5563; /* Medium gray thumb */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280; /* Lighter gray on hover */
-        }
-
-        /* Ensure full viewport height for hero on mobile, adjusting for header */
+        /* Responsive styling for smaller screens */
         @media (max-width: 768px) {
-            .hero-section {
-                min-height: calc(100vh - 4rem); /* Adjust based on header height */
+            .carousel-container {
+                width: 90vw;
+                height: 60vh;
             }
-        }
-    </style>
-    <script>
-        // Tailwind CSS configuration for custom font families and colors
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'dm-mono': ['DM Mono', 'monospace'],
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'brand-accent': '#00ffff', // Example accent color (cyan)
-                    }
-                }
+
+            .carousel-card {
+                width: 80vw;
+                height: 45vh;
             }
+
+            .left { transform: translateX(-25vw); }
+            .right { transform: translateX(25vw); }
         }
-    </script>
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                width: 100vw;
+                height: 60vh;
+            }
+
+            .carousel-card {
+                width: 90vw;
+                height: 50vh;
+                font-size: 1em;
+            }
+
+            .left { transform: translateX(-20vw); }
+            .right { transform: translateX(20vw); }
+        }
+  
+   /* O Open source*/
+ /* .OS{display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #1D1F20;
+      color: #fff;
+    }
+  }*/
+    .galleryO{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 90vw;
+      padding: 20px;
+    }
+
+    .itemO{
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      perspective: 1000px;
+      background-color: #333;
+    }
+
+    .itemO img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .itemO:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .itemO:hover img {
+      filter: brightness(1.1);
+    }
+
+    /* Lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox-content {
+      position: relative;
+      /*background:#fff;*/
+      background-image:url("https://scitechdaily.com/images/Massive-Galaxy.gif");
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: center;
+      color: #333;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .lightbox-content p {
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .lightbox-content a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .lightbox-content a:hover {
+      text-decoration: underline;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #555;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: #333;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .item img {
+        height: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .item img {
+        height: 80px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-neutral-900 via-slate-900 to-black min-h-screen">
-
-    <!-- Header Section: Sticky navigation bar -->
-    <header class="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur-md shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-dm-mono font-bold text-white">AKSHAYA.DEV</a>
-            <nav class="space-x-6">
-                <a href="#hero" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">Home</a>
-                <a href="#portfolio" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">Portfolio</a>
-                <a href="#voryx-shop" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">VORYX Shop</a>
-                <a href="#about" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">About</a>
-                <a href="#contact" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section: Main introduction with dynamic background and glyph animation -->
-    <section id="hero" class="hero-section min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('https://placehold.co/1920x1080/222/666?text=Impactful+Background');">
-        <h1 class="text-5xl md:text-7xl font-dm-mono font-bold text-white mb-4 leading-tight">
-            CRAFTING <span class="text-slate-400">DIGITAL</span> EXCELLENCE
-        </h1>
-        <p class="text-lg md:text-xl text-neutral-300 max-w-2xl mb-8">
-            Blending technical mastery with creative vision to build impactful solutions and art.
-        </p>
-        <!-- Nothing Phone inspired glyph animation -->
-        <div class="glyph-container">
-            <div class="glyph-bar"></div>
-            <div class="glyph-bar"></div>
-            <div class="glyph-bar"></div>
-            <div class="glyph-bar"></div>
-        </div>
-        <a href="#portfolio" class="mt-12 px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-lg rounded-lg transition-colors duration-300 shadow-md">
-            View My Work
-        </a>
+<body>
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <h1 data-aos="fade-up">Akshayaselvakumar</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Expert in video editing, Photoshop, logo design, web design, NFT creation, tutoring, and more.</p>
+        <a href="#" class="btn btn-primary" id="hire" data-aos="fade-up" data-aos-delay="400">Hire Me <i class="fa-duotone fa-solid fa-fire-flame-curved" style="color:#736EFE;"></i></a>
     </section>
-
-    <!-- Portfolio Section: Showcasing diverse skills -->
-    <section id="portfolio" class="py-16 md:py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-dm-mono font-bold text-center mb-12 text-white">My Portfolio</h2>
-
-            <!-- Computer Science & Open-Source Development Section -->
-            <div class="bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50 mb-16">
-                <h3 class="text-3xl font-dm-mono font-bold mb-6 text-white text-center md:text-left">Code that Solves Problems: Engineering Digital Solutions</h3>
-                <p class="text-neutral-300 mb-4 leading-relaxed">
-                    As a <strong class="text-white">gold medalist in Master of Science in Computer Science</strong>, I am driven by a profound passion for building elegant, efficient, and impactful software. My work in computer science is dedicated to transforming complex challenges into seamless digital experiences. I believe in the power of well-crafted code to innovate and streamline, creating solutions that are not only functional but also intuitive and scalable.
-                </p>
-                <p class="text-neutral-300 mb-6 leading-relaxed">
-                    My commitment to collaborative innovation is evident in my extensive contributions to the open-source community. You can find my work on GitHub, where I maintain <strong class="text-white">over 55 open-source repositories</strong> and engage with a thriving community of <strong class="text-white">210+ followers</strong>. This platform serves as a testament to my dedication to shared knowledge and continuous improvement in the developer ecosystem.
-                </p>
-                <div class="text-center md:text-left">
-                    <a href="https://github.com/Akshayadeveloper" target="_blank" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-md rounded-lg transition-colors duration-300 shadow-md inline-block">
-                        View My GitHub Profile
-                    </a>
+    <!-- About Section -->
+    <section class="about text-center">
+        <div class="profile-picture-holder">
+            <img src="Video.Guru_20241203_125958834.gif" alt="Profile Picture">
+        </div>
+        <h2 class="text-center" data-aos="fade-up">About Me</h2>
+      
+        <p data-aos="fade-up" data-aos-delay="200">I am a creative freelancer with expertise in video editing, Photoshop, NFT creation, web design, and more. Awarded a gold medal for academic excellence in Computer Science at Bharathiar University.</p>
+    </section>
+<!-- Portfolio Gallery Section -->
+    <section class="portfolio-gallery" data-aos="fade-up">
+    <h2 class="text-center" data-aos="fade-up">Portfolio Gallery <i class="fa-duotone fa-solid fa-rectangle-history-circle-user fa-beat-fade"></i></h2>
+    <div class="gallery-grid">
+       <div class="gallery-item" onclick="openIframeWithContent('https://www.youtube.com/@Glory-Akshaya', 'https://images.unsplash.com/photo-1675049603723-37dfc5eed92f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Click » 📽️ editing skills.')">
+                <img src="https://images.unsplash.com/photo-1675049603723-37dfc5eed92f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 1">
+                <div class="gallery-overlay">
+                    <h3>Photo Video Editing</h3>
+                    <p>Professional video editing with transitions and effects</p>
                 </div>
-            </div>
-
-            <!-- Digital Art & Design Section -->
-            <div class="bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50 mb-16">
-                <h3 class="text-3xl font-dm-mono font-bold mb-6 text-white text-center md:text-left">Where Creativity Meets the Canvas: Art from the Imagination</h3>
-                <p class="text-neutral-300 mb-4 leading-relaxed">
-                    Beyond the realm of code, my creativity finds expression in the vibrant world of digital art and design. I am deeply passionate about digital painting, where I translate imagination into captivating visuals. My artistic journey is shared with a growing community on ArtStreet Medibang, where I've garnered a following of <strong class="text-white">over 100 art enthusiasts</strong>.
-                </p>
-                <p class="text-neutral-300 mb-6 leading-relaxed">
-                    My design skills extend to creating unique and personalized products. I specialize in crafting original designs for various Print-on-Demand platforms, producing bespoke <strong class="text-white">stickers, mugs, clothing, and home decor</strong>. Each piece is designed to bring a touch of artistic flair to everyday life.
-                </p>
-                <div class="text-center md:text-left">
-                    <a href="https://medibang.com/u/Sukuna" target="_blank" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-md rounded-lg transition-colors duration-300 shadow-md inline-block">
-                        Explore My Digital Art Gallery
-                    </a>
-                </div>
-            </div>
-
-            <!-- Nature & Landscape Photography Section -->
-            <div class="bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50 mb-16">
-                <h3 class="text-3xl font-dm-mono font-bold mb-6 text-white text-center md:text-left">Capturing the Soul of Nature: The World Through My Lens</h3>
-                <p class="text-neutral-300 mb-4 leading-relaxed">
-                    My lens is a window to the serene and powerful moments hidden within the natural world. Photography is a profound passion, allowing me to capture the fleeting beauty of landscapes and the intricate details of nature. My curated collection features <strong class="text-white">over 100 high-resolution nature photographs</strong>, each telling a unique story of the earth's grandeur.
-                </p>
-                <p class="text-neutral-300 mb-6 leading-relaxed">
-                    These stunning photographs are available for purchase, offering both high-quality digital downloads and exquisite prints. Whether you're looking to adorn your personal space, enhance your web projects, or acquire images for commercial licensing, my collection provides versatile options to meet your needs.
-                </p>
-                <div class="text-center md:text-left">
-                    <a href="YOUR_PHOTO_STORE_LINK_HERE" target="_blank" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-md rounded-lg transition-colors duration-300 shadow-md inline-block">
-                        Browse My Online Photo Store
-                    </a>
-                </div>
-            </div>
-
-            <h3 class="text-3xl font-dm-mono font-bold text-center mb-8 text-white">Visual Showcase</h3>
-            <p class="text-center text-neutral-400 mb-10 max-w-2xl mx-auto">
-                A glimpse into the visual aspects of my work, spanning various creative and technical projects. Click on any image to view it in detail.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Gallery Item 1 -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
-                    <img src="https://placehold.co/600x450/333/ccc?text=Code+Snippet" alt="Code related visual" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Project</p>
-                    </div>
-                </div>
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
-                    <img src="https://placehold.co/600x450/444/ddd?text=Digital+Painting" alt="Digital Art piece" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Art</p>
-                    </div>
-                </div>
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
-                    <img src="https://placehold.co/600x450/555/eee?text=Landscape+Photo" alt="Nature Photography" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Photo</p>
-                    </div>
-                </div>
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
-                    <img src="https://placehold.co/600x450/2a2a2a/bbb?text=UI+Design" alt="User Interface Design" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Design</p>
-                    </div>
-                </div>
-                <!-- Gallery Item 5 -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
-                    <img src="https://placehold.co/600x450/3b3b3b/ccc?text=Abstract+Art" alt="Abstract Digital Art" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Art</p>
-                    </div>
-                </div>
-                <!-- Gallery Item 6 -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
-                    <img src="https://placehold.co/600x450/4c4c4c/ddd?text=Wildlife+Photo" alt="Wildlife Photography" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Photo</p>
-                    </div>
-                </div>
+            </div>       
+        <div class="gallery-item" onclick="openIframeWithContent('https://medibang.com/u/Sukuna', 'ezgif-frame-004.jpg', '» 3D Logo & Poster design ')">
+                <img src="ezgif-frame-004.jpg" alt="Project 2">
+                <div class="gallery-overlay">
+                <h3>3D Logo & Poster Design</h3>
+                <p>Brand identity</p>
             </div>
         </div>
-    </section>
-
-    <!-- Ignite Shop Section: Print-on-Demand Brand -->
-    <section id="voryx-shop" class="py-16 md:py-24 bg-neutral-800/30">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50">
-                <h2 class="text-4xl font-dm-mono font-bold mb-8 text-white">Ignite Your Style: My Print-on-Demand Shop</h2>
-                <p class="text-neutral-300 mb-6 leading-relaxed">
-                    Welcome to <strong class="text-white">VORYX</strong>, my exclusive print-on-demand brand where creativity meets wearable art and unique home decor. Here, you'll find a diverse collection of original designs, ranging from thought-provoking graphics to intricate patterns, all crafted with passion and attention to detail.
-                </p>
-                <p class="text-neutral-300 mb-8 leading-relaxed">
-                    Every item is produced with high-quality materials, ensuring comfort, durability, and vibrant prints. Explore my designs on various platforms, each offering a unique selection of products including t-shirts, hoodies, mugs, phone cases, and more.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-                    <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/200x200/666/eee?text=Teespring" alt="Teespring Logo/Product" class="w-40 h-40 rounded-lg mb-4 object-cover shadow-lg border border-neutral-700">
-                        <h4 class="text-xl font-dm-mono font-semibold text-white mb-2">Teespring</h4>
-                        <a href="YOUR_TEESPRING_LINK_HERE" target="_blank" class="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-sm rounded-lg transition-colors duration-300 shadow-md">
-                            Shop Teespring
-                        </a>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/200x200/777/ddd?text=TeePublic" alt="TeePublic Logo/Product" class="w-40 h-40 rounded-lg mb-4 object-cover shadow-lg border border-neutral-700">
-                        <h4 class="text-xl font-dm-mono font-semibold text-white mb-2">TeePublic</h4>
-                        <a href="YOUR_TEEPUBLIC_LINK_HERE" target="_blank" class="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-sm rounded-lg transition-colors duration-300 shadow-md">
-                            Shop TeePublic
-                        </a>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/200x200/888/fff?text=Fourthwall" alt="Fourthwall Logo/Product" class="w-40 h-40 rounded-lg mb-4 object-cover shadow-lg border border-neutral-700">
-                        <h4 class="text-xl font-dm-mono font-semibold text-white mb-2">Fourthwall</h4>
-                        <a href="YOUR_FOURTHWALL_LINK_HERE" target="_blank" class="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-sm rounded-lg transition-colors duration-300 shadow-md">
-                            Shop Fourthwall
-                        </a>
-                    </div>
-                </div>
-                <p class="text-neutral-400 font-dm-mono text-sm">
-                    Find unique designs for apparel, accessories, and home goods.
-                </p>
+        <div class="gallery-item" onclick="openIframeWithContent('https://akshayadeveloper.blogspot.com/', 'Project 3.jpeg', 'Click » novel writing.')">              
+            <img src="Project 3.jpeg" alt="Project 3">
+            <div class="gallery-overlay">
+                <h3>Content Writing</h3>
+                <p>Novel and Research writing</p>
             </div>
         </div>
-    </section>
-
-    <!-- About Section: Personal introduction -->
-    <section id="about" class="py-16 md:py-24 bg-neutral-800/30">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center md:text-left bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50">
-                <h2 class="text-4xl font-dm-mono font-bold mb-8 text-white">About Akshaya Selvakumar</h2>
-                <img src="https://placehold.co/200x200/555/eee?text=My+Photo" alt="Akshaya Selvakumar's Portrait" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto md:float-right md:ml-8 mb-6 md:mb-0 shadow-lg border-2 border-slate-600">
-                <p class="text-neutral-300 mb-4 leading-relaxed">
-                    Hello! I'm Akshaya Selvakumar, a passionate creative professional with a keen eye for detail and a love for storytelling through various mediums. My journey into the world of technology and art began many years ago, driven by a desire to innovate, design, and capture the essence of moments and ideas.
-                </p>
-                <p class="text-neutral-300 mb-4 leading-relaxed">
-                    With a background as a <strong class="text-white">gold medalist in Computer Science</strong>, I specialize in crafting robust software solutions and contributing to the open-source community. Concurrently, my artistic side flourishes through digital painting and creating unique designs for various products. I also have a deep appreciation for the natural world, expressed through my landscape photography.
-                </p>
-                <p class="text-neutral-300 leading-relaxed">
-                    When I'm not behind the keyboard or the camera, I enjoy exploring new technologies and experimenting with different art forms. Let's connect and create something beautiful together!
-                </p>
+      <div class="gallery-item" onclick="openIframeWithContent('https://github.com/Akshayadeveloper', 'Project 4.jpeg', 'Click » Branded web design ')">              
+            <img src="Project 4.jpeg" alt="Project 4">
+            <div class="gallery-overlay">
+                <h3>Website Design</h3>
+                <p>Branded Website Templates</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section: Form and social links -->
-    <section id="contact" class="py-16 md:py-24">
-        <div class="container mx-auto px-6">
-            <div class="max-w-2xl mx-auto bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50">
-                <h2 class="text-4xl font-dm-mono font-bold text-center mb-8 text-white">Get In Touch</h2>
-                <form action="#" method="POST" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-dm-mono text-neutral-300 mb-1">Full Name</label>
-                        <input type="text" name="name" id="name" required class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-md text-white focus:ring-2 focus:ring-slate-500 focus:border-slate-500 outline-none transition-colors" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-dm-mono text-neutral-300 mb-1">Email Address</label>
-                        <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-md text-white focus:ring-2 focus:ring-slate-500 focus:border-slate-500 outline-none transition-colors" placeholder="you@example.com">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-dm-mono text-neutral-300 mb-1">Message</label>
-                        <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-md text-white focus:ring-2 focus:ring-slate-500 focus:border-slate-500 outline-none transition-colors" placeholder="Your message..."></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-lg rounded-lg transition-colors duration-300 shadow-md">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-                <div class="mt-10 text-center">
-                    <p class="text-neutral-400 font-dm-mono">Or reach out via:</p>
-                    <p class="text-white mt-2">akshaya.dev@example.com | +1 (555) 123-4567</p>
-                    <div class="flex justify-center space-x-6 mt-6">
-                        <!-- Social Media Icons (Facebook, Twitter, LinkedIn, Instagram) -->
-                        <a href="#" class="text-neutral-400 hover:text-white transition-colors" aria-label="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-neutral-400 hover:text-white transition-colors" aria-label="Twitter"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
-                        <a href="#" class="text-neutral-400 hover:text-white transition-colors" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.237 3.436 7.736 7.688 7.98V14.89H7.126v-2.97h2.562V9.66c0-2.54 1.53-3.94 3.818-3.94 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.77-1.63 1.562v1.875h2.773l-.443 2.97h-2.33v5.098A9.959 9.959 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-neutral-400 hover:text-white transition-colors" aria-label="Instagram">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919A48.348 48.348 0 0112 2.163zm0 1.441c-3.116 0-3.474.011-4.691.068-2.695.124-3.912 1.349-4.026 4.026-.057 1.217-.067 1.575-.067 4.691s.01 3.474.067 4.691c.113 2.677 1.331 3.902 4.026 4.026 1.217.057 1.575.067 4.691.067 3.116 0 3.474-.011 4.691-.067 2.695-.124 3.912-1.349 4.026-4.026.057-1.217.067-1.575.067-4.691s-.01-3.474-.067-4.691c-.113-2.677-1.331-3.902-4.026-4.026C15.474 3.614 15.116 3.604 12 3.604zm0 4.467c-2.363 0-4.287 1.924-4.287 4.287s1.924 4.287 4.287 4.287 4.287-1.924 4.287-4.287S14.363 8.071 12 8.071zm0 6.973c-1.483 0-2.687-1.204-2.687-2.687S10.517 9.67 12 9.67s2.687 1.204 2.687 2.687-1.204 2.687-2.687 2.687zm4.808-7.199c-.563 0-1.02.457-1.02 1.02s.457 1.02 1.02 1.02 1.02-.457 1.02-1.02-.457-1.02-1.02-1.02z" clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="py-8 bg-neutral-950 text-center">
-        <p class="text-neutral-500 text-sm font-dm-mono">&copy; <span id="currentYear"></span> Akshaya Selvakumar. All Rights Reserved.</p>
-        <p class="text-neutral-600 text-xs font-dm-mono mt-1">Designed with <span class="text-red-500">&hearts;</span> and a touch of //GLYPH_STYLE</p>
-    </footer>
-
-    <!-- Image Modal: Hidden by default, appears on image click -->
-    <div id="imageModal" class="modal fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 invisible">
-        <div class="modal-content bg-neutral-900 p-4 rounded-lg shadow-2xl max-w-3xl max-h-[90vh] w-full transform scale-95 -translate-y-10 relative">
-            <img id="modalImage" src="" alt="Full-size view" class="max-w-full max-h-[80vh] object-contain mx-auto rounded">
-            <button id="closeModal" class="absolute top-3 right-3 text-neutral-300 hover:text-white transition-colors text-3xl font-dm-mono leading-none">&times;</button>
         </div>
     </div>
+</section>
+<!-- Iframe Modal -->
+    <div class="iframe-modal" id="iframeModal">
+        <div class="iframe-content" id="iframeContent">
+            <div class="iframe-container">
+                <img id="iframeImage" src="" alt="Project Image">
+                <div class="iframe-text" id="iframeText">Click » for demo</div>
+            </div>
+            <div class="iframe-buttons">
+                <button class="iframe-button" onclick="zoomIn()">+</button>
+                <button class="iframe-button" onclick="zoomOut()">-</button>
+                <button class="iframe-button iframe-elaborate" onclick="elaborateIframe()">»</button>
+                <button class="iframe-button iframe-close" onclick="closeIframe()">x</button>
+            </div>
+        </div>
+    </div>
+  
+  <!--My OpenSource Project-->
+  <section class="OpenSource text-center" data-aos="fade-up">
+    <div class="container text-center">
+      <h2 class="raw text-center" data-aos="fade-up">My OpenSource Project</h2>
+      <div class="galleryO OS">
+  <div class="itemO" onclick="openLightbox('Photo Frame Generator App', 'https://akshayadeveloper.github.io/Photo-Frame-Generator-App-/', 'photo-collage.png.jpeg')">
+    <img src="photo-collage.png.jpeg" alt="Product 1">
+  </div>
+  <div class="itemO" onclick="openLightbox('Instant PDF Reader', 'https://akshayadeveloper.github.io/Instant-PDF-Reader/index.html', 'PDF.jpeg')">
+    <img src="PDF.jpeg" alt="Product 2">
+  </div>
+  <div class="itemO" onclick="openLightbox('Neural Networks', 'https://akshayadeveloper.github.io/Neural-networks/index.html', 'https://miro.medium.com/v2/resize:fit:1400/1*1oTDnw0B32cdT0J1fBmKWg.gif')">
+    <img src="https://miro.medium.com/v2/resize:fit:1400/1*1oTDnw0B32cdT0J1fBmKWg.gif" alt="Product 3">
+  </div>
+  <div class="itemO" onclick="openLightbox('Tour Budget Planner App', 'https://akshayadeveloper.github.io/Tour-Budget-Planner-App/index.html', 'Tour.jpeg')">
+    <img src="Tour.jpeg" alt="Product 4">  
+</div>
+   <div class="itemO" onclick="openLightbox('BTS-Play', 'https://akshayadeveloper.github.io/BTS-Play/index.html', 'https://raw.githubusercontent.com/Akshayadeveloper/BTS-Play/refs/heads/main/Preview%E2%80%94BTS%20play%20music.jpg')">
+    <img src="https://raw.githubusercontent.com/Akshayadeveloper/BTS-Play/refs/heads/main/Preview%E2%80%94BTS%20play%20music.jpg" alt="Product 5">  
+</div> 
+  <div class="itemO" onclick="openLightbox('Memory Card Game', 'https://akshayadeveloper.github.io/Memory-card-game-interactive/index.html', 'Memory.jpeg')">
+    <img src="Memory.jpeg" alt="Product 6">  
+</div>
+  <div class="itemO" onclick="openLightbox('AI Text to Speech ', 'https://akshayadeveloper.github.io/text-to-speech/index.html', 'AI text.jpeg')">
+    <img src="AI text.jpeg" alt="Product 7">  
+</div>
+   <div class="itemO" onclick="openLightbox('Automatic Shopping List', 'https://akshayadeveloper.github.io/Groceries-Shop-List-Automatic/index.html', 'Shop.jpeg')">
+    <img src="Shop.jpeg" alt="Product 8">  
+</div>
+  <div class="itemO" onclick="openLightbox('Random Gradient App', 'https://akshayadeveloper.github.io/Random-Image-color-changer-app/Randomly-ImageColor-generator-App.html', 'bloggif_674c443bec900.gif')">
+    <img src="bloggif_674c443bec900.gif" alt="Product 9">  
+</div>  
+ </div> 
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-content">
+    <span class="close-btn" onclick="closeLightbox()">×</span>
+    <img id="lightbox-image" src="" alt="">
+    <p id="lightbox-text"></p>
+    <a id="lightbox-link" href="#" target="_blank">Learn more</a>
+  </div>
+</div>
+  </section>
+  
+  <!-- My Expertise -->
+  <section class="expertise text-center py-5" data-aos="fade-up">
+        <div class="container text-center">
+            <h2  class="raw text-center"data-aos="fade-up">My Expertise </h2>
+            
+<div class="carousel-container text-center">
+    <div class="carousel-card left" id="card1">
+        <iframe src="https://www.youtube.com/embed/1aZ6EbMVu24?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="carousel-card center" id="card2"><iframe src="https://www.youtube.com/embed/z6dfHVGXpnQ?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="carousel-card right" id="card3"><iframe src="https://www.youtube.com/embed/y6DgyJELHHI?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+    </div> </div> 
+  </section>
+    
+     <!-- Portfolio Section -->
 
-    <!-- JavaScript for interactivity -->
+    <section class="portfolio">
+        <div class="container text-center">
+            <h2  class="raw"data-aos="fade-up">My Creative Works</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card">
+                        <img src="create1.jpeg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"><i class="fa-solid fa-video icon"></i> View <a href="https://www.youtube.com/@AkshayaDeveloper"></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <img src="https://dthezntil550i.cloudfront.net/qv/latest/qv2404161651264660025893296/1280_960/9218ee9f-e6ce-4bde-86eb-58134f88a0ff.png" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>   
+                            <p class="card-text"><img src="https://cdn.prod.website-files.com/6511456e453d26d6b4ae76b9/65c25eca5584401a98c24359_punchev-studio-industry-ux-ui-nft.webp" alt="NFT Creations" width="40" height="40">Medibang:View
+                             <a href="https://medibang.com/u/Sukuna"></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoQMSETH5smd0_ygVuDKjjVR8cov1TFv-gSxMKDYywbtVoK-LMz1XMv4&s=10" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">Web Design:View <a href="https://github.com/Akshayadeveloper?tab=repositories"></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Testimonials Section -->
+    <section class="testimonials text-center">
+        <h2 class="raw" data-aos="fade-up">Testimonials</h2>
+        <p data-aos="fade-right" data-aos-delay="200">"Delivered high-quality designs that exceeded my expectations!" - Client 1</p>
+        <p data-aos="fade-right" data-aos-delay="400">"Amazing work! Will hire again." - Client 2</p>
+    </section>
+
+    <!-- Crypto Payment Section -->
+    <section class="crypto-payment text-center">
+        <div class="container">
+            <h2 class="raw" data-aos="fade-up">Payment Gateways</h2>
+            <div class="wallets" data-aos="fade-up">
+<p>Paypal| Payoneer| Paytm| Gpay| Binance| Metamask| TrustWallet| Cwallet| FaucetPay| UnionPay| WechatPay</p>           
+            </div>
+        </div>
+    </section>
+      <section class="contact-section" data-aos="fade-up">
+        <div class="container text-center">
+        <h2 class="raw">Let's' Connect</h2>
+        <a href="mailto:akshayaselvakumar532@gmail.com" class="btn" style="color:white";>Email:akshayaselvakumar532@gmail.com</a>
+        <div class="social-links">
+            <a href="https://github.com/Akshayadeveloper"><i class="fab fa-github"></i></a>
+            <a href="https://youtube.com/@Glory-Akshaya"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/akshaya-s-5b3461278"><i class="fab fa-linkedin"></i></a>
+            <a href="https://codepen.io/Akshaya-developer"><i class="fab fa-codepen"></i></a>
+            <a href="https://linktr.ee/akshayadeveloper"><i class="fas fa-link"></i></a>
+            <a href="https://akshayadeveloper.blogspot.com"><i class="fab fa-blogger"></i></a>
+          <a href="https://t.me/Onlyone_Earn"><i class="fab fa-telegram"></i></a>
+        </div>
+    </section>
+      <!-- Explore More Section -->
+    <section class="explore-more text-center">
+        <div class="container">
+            <h2 class="raw" data-aos="fade-up">Explore More</h2>
+            <p>
+               <a href="https://medibang.com/u/Sukuna"><img src="https://media.imgcdn.org/repo/2023/06/medibang-paint-pro/6494179e4e314-medibang-paint-pro-Icon.webp" alt="MediBang Paint Pro Logo" width="20" height="20"></a> |
+               <a href="https://akshayadeveloper.blogspot.com"><i class="fab fa-blogger"></i></a> |
+               <a href="https://www.linkedin.com/posts/akshaya-s-5b3461278_design-ui-ux-activity-7136971823845437441-QdKM?utm_source=share&utm_medium=member_desktop"><i class="fab fa-linkedin"></i></a> |
+               <a href="https://codepen.io/Akshaya-developer"><i class="fab fa-codepen"></i></a> |
+               <a href="https://github.com/Akshayadeveloper"><i class="fab fa-github"></i></a>
+            </p>
+        </div>
+    </section>
+                 <div class="container text-center">
+            
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+    <!-- AOS JS (for animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault(); // Prevent default anchor click behavior
-                const targetId = this.getAttribute('href'); // Get the target section ID
-                const targetElement = document.querySelector(targetId); // Select the target element
-                if (targetElement) {
-                    // Scroll to the target element with smooth animation
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        AOS.init();
+    </script>
+<!-- Add this to your existing script section -->
+<script>
+    // Back to top button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-        // Update current year in the footer dynamically
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    // Handle browser back button
+    window.onpopstate = function(event) {
+        if (document.referrer.includes(window.location.hostname)) {
+            history.go(-1);
+        }
+    };
+   
+</script>
+    <script>
+        function openIframeWithContent(link, imageSrc, textContent) {
+            document.getElementById("iframeImage").src = imageSrc;
+            document.getElementById("iframeText").innerText = textContent;
+            document.getElementById("iframeModal").style.display = "flex";
+            document.getElementById("iframeModal").setAttribute("data-link", link);
+        }
 
-        // Image Modal Logic: Handles opening and closing the image lightbox
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const closeModalButton = document.getElementById('closeModal');
-        const galleryItems = document.querySelectorAll('.gallery-item');
+        function closeIframe() {
+            document.getElementById("iframeModal").style.display = "none";
+        }
 
-        // Add click event listener to each gallery item to open the modal
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const imgSrc = item.querySelector('img').src; // Get the source of the clicked image
-                // Modify placeholder URL for higher resolution in modal if desired
-                // This replaces the 600x450 or 400x300 dimensions with 1200x900 for a larger view
-                modalImage.src = imgSrc.replace(/600x450|400x300/, '1200x900');
-                modal.classList.add('open'); // Add 'open' class to show modal
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling when modal is open
-            });
-        });
+        function elaborateIframe() {
+            const link = document.getElementById("iframeModal").getAttribute("data-link");
+            window.open(link, "_blank");
+        }
 
-        // Function to close the modal
-        const closeModal = () => {
-            modal.classList.remove('open'); // Remove 'open' class to hide modal
-            document.body.style.overflow = ''; // Restore background scrolling
-        };
+        function zoomIn() {
+            let iframeImage = document.getElementById("iframeImage");
+            iframeImage.style.transform = "scale(1.2)";
+            iframeImage.style.transition = "transform 0.3s ease-in-out";
+        }
 
-        // Event listener for closing modal via button click
-        closeModalButton.addEventListener('click', closeModal);
-
-        // Event listener for closing modal via Escape key press
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modal.classList.contains('open')) {
-                closeModal();
-            }
-        });
-
-        // Event listener for closing modal when clicking outside the modal content (on the backdrop)
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) { // Check if the click is directly on the modal backdrop
-                closeModal();
-            }
-        });
-
-        // Simple check for hero background image load for debugging/info
-        const heroSection = document.getElementById('hero');
-        // Extract URL from background-image style, handling linear-gradient part
-        const heroBgUrlMatch = heroSection.style.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/);
-        const heroBgUrl = heroBgUrlMatch ? heroBgUrlMatch[1] : null;
-
-        if (heroBgUrl) {
-            const img = new Image();
-            img.src = heroBgUrl;
-            img.onload = () => console.log('Hero background image loaded successfully.');
-            img.onerror = () => {
-                console.error('Hero background image failed to load. Using fallback gradient.');
-                // Fallback is already handled by CSS, this is just for console info
-            }
+        function zoomOut() {
+            let iframeImage = document.getElementById("iframeImage");
+            iframeImage.style.transform = "scale(1)";
+            iframeImage.style.transition = "transform 0.3s ease-in-out";
         }
     </script>
+<script>
+        // Back to Top button functionality
+        const backToTopButton = document.createElement('a');
+        backToTopButton.classList.add('back-to-top');
+        backToTopButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
+        document.body.appendChild(backToTopButton);
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        };
+
+        backToTopButton.onclick = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
+<script>
+    // JavaScript to handle card position swapping on hover in My Expertise section
+       const card1 = document.getElementById('card1');
+    const card2 = document.getElementById('card2');
+    const card3 = document.getElementById('card3');
+
+    // Function to rotate the cards
+    function rotateCards() {
+        // Swap class positions in a circular fashion
+        if (card1.classList.contains('left')) {
+            card1.classList.replace('left', 'center');
+            card2.classList.replace('center', 'right');
+            card3.classList.replace('right', 'left');
+        } else if (card1.classList.contains('center')) {
+            card1.classList.replace('center', 'right');
+            card2.classList.replace('right', 'left');
+            card3.classList.replace('left', 'center');
+        } else if (card1.classList.contains('right')) {
+            card1.classList.replace('right', 'left');
+            card2.classList.replace('left', 'center');
+            card3.classList.replace('center', 'right');
+        }
+    }
+
+    // Add hover event listeners to each card
+    card1.addEventListener('mouseenter', rotateCards);
+    card2.addEventListener('mouseenter', rotateCards);
+    card3.addEventListener('mouseenter', rotateCards);
+</script>
+     <script>
+          //Opensource Project
+  function openLightbox(text, link, imageSrc) {
+    document.getElementById('lightbox-text').innerText = text;
+    document.getElementById('lightbox-link').href = link;
+    document.getElementById('lightbox-image').src = imageSrc;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+<footer class="text-center">
+        <p>Connect with me on <a href="https://github.com/Akshayadeveloper"><i class="fab fa-github"></i></a></p>
+        <p>&copy; 2024 Akshayaselvakumar. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
+
