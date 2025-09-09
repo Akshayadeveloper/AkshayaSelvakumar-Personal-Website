@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshaya Selvakumar - Creative Portfolio</title>
+    <!-- Tailwind CSS CDN for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Inter (main) and DM Mono (accent/tech) -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for body, ensuring smooth scrolling and font application */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Fallback for gradient */
+            color: #e5e7eb; /* Light gray text */
+            scroll-behavior: smooth;
+        }
+
+        /* Custom font application for DM Mono */
+        .font-dm-mono {
+            font-family: 'DM Mono', monospace;
+        }
+
+        /* Nothing Phone inspired glyph animation styles */
+        .glyph-container {
+            display: flex;
+            gap: 6px; /* Spacing between glyph bars */
+            margin-top: 20px;
+        }
+
+        .glyph-bar {
+            width: 30px; /* Width of each bar */
+            height: 5px; /* Height of each bar */
+            background-color: #9ca3af; /* Muted gray for glyphs */
+            border-radius: 2px; /* Slightly rounded bars */
+            animation: glyph-pulse 2s infinite ease-in-out;
+        }
+
+        /* Staggered animation for each glyph bar */
+        .glyph-bar:nth-child(1) { animation-delay: 0s; }
+        .glyph-bar:nth-child(2) { animation-delay: 0.2s; }
+        .glyph-bar:nth-child(3) { animation-delay: 0.4s; }
+        .glyph-bar:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes glyph-pulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+            50% { opacity: 1; transform: scaleY(1); }
+        }
+
+        /* Modal styles for smooth transitions */
+        .modal {
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal.open .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937; /* Dark gray track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* Medium gray thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* Lighter gray on hover */
+        }
+
+        /* Ensure full viewport height for hero on mobile, adjusting for header */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: calc(100vh - 4rem); /* Adjust based on header height */
+            }
+        }
+    </style>
+    <script>
+        // Tailwind CSS configuration for custom font families and colors
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'dm-mono': ['DM Mono', 'monospace'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-accent': '#00ffff', // Example accent color (cyan)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-neutral-900 via-slate-900 to-black min-h-screen">
+
+    <!-- Header Section: Sticky navigation bar -->
+    <header class="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-dm-mono font-bold text-white">AKSHAYA.DEV</a>
+            <nav class="space-x-6">
+                <a href="#hero" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">Home</a>
+                <a href="#portfolio" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">Portfolio</a>
+                <a href="#voryx-shop" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">VORYX Shop</a>
+                <a href="#about" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">About</a>
+                <a href="#contact" class="text-neutral-300 hover:text-white transition-colors duration-300 font-dm-mono text-sm">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section: Main introduction with dynamic background and glyph animation -->
+    <section id="hero" class="hero-section min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('https://placehold.co/1920x1080/222/666?text=Impactful+Background');">
+        <h1 class="text-5xl md:text-7xl font-dm-mono font-bold text-white mb-4 leading-tight">
+            CRAFTING <span class="text-slate-400">DIGITAL</span> EXCELLENCE
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-300 max-w-2xl mb-8">
+            Blending technical mastery with creative vision to build impactful solutions and art.
+        </p>
+        <!-- Nothing Phone inspired glyph animation -->
+        <div class="glyph-container">
+            <div class="glyph-bar"></div>
+            <div class="glyph-bar"></div>
+            <div class="glyph-bar"></div>
+            <div class="glyph-bar"></div>
+        </div>
+        <a href="#portfolio" class="mt-12 px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-lg rounded-lg transition-colors duration-300 shadow-md">
+            View My Work
+        </a>
+    </section>
+
+    <!-- Portfolio Section: Showcasing diverse skills -->
+    <section id="portfolio" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-dm-mono font-bold text-center mb-12 text-white">My Portfolio</h2>
+
+            <!-- Computer Science & Open-Source Development Section -->
+            <div class="bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50 mb-16">
+                <h3 class="text-3xl font-dm-mono font-bold mb-6 text-white text-center md:text-left">Code that Solves Problems: Engineering Digital Solutions</h3>
+                <p class="text-neutral-300 mb-4 leading-relaxed">
+                    As a <strong class="text-white">gold medalist in Master of Science in Computer Science</strong>, I am driven by a profound passion for building elegant, efficient, and impactful software. My work in computer science is dedicated to transforming complex challenges into seamless digital experiences. I believe in the power of well-crafted code to innovate and streamline, creating solutions that are not only functional but also intuitive and scalable.
+                </p>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    My commitment to collaborative innovation is evident in my extensive contributions to the open-source community. You can find my work on GitHub, where I maintain <strong class="text-white">over 55 open-source repositories</strong> and engage with a thriving community of <strong class="text-white">210+ followers</strong>. This platform serves as a testament to my dedication to shared knowledge and continuous improvement in the developer ecosystem.
+                </p>
+                <div class="text-center md:text-left">
+                    <a href="https://github.com/Akshayadeveloper" target="_blank" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-md rounded-lg transition-colors duration-300 shadow-md inline-block">
+                        View My GitHub Profile
+                    </a>
+                </div>
+            </div>
+
+            <!-- Digital Art & Design Section -->
+            <div class="bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50 mb-16">
+                <h3 class="text-3xl font-dm-mono font-bold mb-6 text-white text-center md:text-left">Where Creativity Meets the Canvas: Art from the Imagination</h3>
+                <p class="text-neutral-300 mb-4 leading-relaxed">
+                    Beyond the realm of code, my creativity finds expression in the vibrant world of digital art and design. I am deeply passionate about digital painting, where I translate imagination into captivating visuals. My artistic journey is shared with a growing community on ArtStreet Medibang, where I've garnered a following of <strong class="text-white">over 100 art enthusiasts</strong>.
+                </p>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    My design skills extend to creating unique and personalized products. I specialize in crafting original designs for various Print-on-Demand platforms, producing bespoke <strong class="text-white">stickers, mugs, clothing, and home decor</strong>. Each piece is designed to bring a touch of artistic flair to everyday life.
+                </p>
+                <div class="text-center md:text-left">
+                    <a href="https://medibang.com/u/Sukuna" target="_blank" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-md rounded-lg transition-colors duration-300 shadow-md inline-block">
+                        Explore My Digital Art Gallery
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nature & Landscape Photography Section -->
+            <div class="bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50 mb-16">
+                <h3 class="text-3xl font-dm-mono font-bold mb-6 text-white text-center md:text-left">Capturing the Soul of Nature: The World Through My Lens</h3>
+                <p class="text-neutral-300 mb-4 leading-relaxed">
+                    My lens is a window to the serene and powerful moments hidden within the natural world. Photography is a profound passion, allowing me to capture the fleeting beauty of landscapes and the intricate details of nature. My curated collection features <strong class="text-white">over 100 high-resolution nature photographs</strong>, each telling a unique story of the earth's grandeur.
+                </p>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    These stunning photographs are available for purchase, offering both high-quality digital downloads and exquisite prints. Whether you're looking to adorn your personal space, enhance your web projects, or acquire images for commercial licensing, my collection provides versatile options to meet your needs.
+                </p>
+                <div class="text-center md:text-left">
+                    <a href="YOUR_PHOTO_STORE_LINK_HERE" target="_blank" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-md rounded-lg transition-colors duration-300 shadow-md inline-block">
+                        Browse My Online Photo Store
+                    </a>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-dm-mono font-bold text-center mb-8 text-white">Visual Showcase</h3>
+            <p class="text-center text-neutral-400 mb-10 max-w-2xl mx-auto">
+                A glimpse into the visual aspects of my work, spanning various creative and technical projects. Click on any image to view it in detail.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
+                    <img src="https://placehold.co/600x450/333/ccc?text=Code+Snippet" alt="Code related visual" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Project</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
+                    <img src="https://placehold.co/600x450/444/ddd?text=Digital+Painting" alt="Digital Art piece" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Art</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
+                    <img src="https://placehold.co/600x450/555/eee?text=Landscape+Photo" alt="Nature Photography" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Photo</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
+                    <img src="https://placehold.co/600x450/2a2a2a/bbb?text=UI+Design" alt="User Interface Design" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Design</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
+                    <img src="https://placehold.co/600x450/3b3b3b/ccc?text=Abstract+Art" alt="Abstract Digital Art" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Art</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-xl cursor-pointer aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3">
+                    <img src="https://placehold.co/600x450/4c4c4c/ddd?text=Wildlife+Photo" alt="Wildlife Photography" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-dm-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ignite Shop Section: Print-on-Demand Brand -->
+    <section id="voryx-shop" class="py-16 md:py-24 bg-neutral-800/30">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50">
+                <h2 class="text-4xl font-dm-mono font-bold mb-8 text-white">Ignite Your Style: My Print-on-Demand Shop</h2>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    Welcome to <strong class="text-white">VORYX</strong>, my exclusive print-on-demand brand where creativity meets wearable art and unique home decor. Here, you'll find a diverse collection of original designs, ranging from thought-provoking graphics to intricate patterns, all crafted with passion and attention to detail.
+                </p>
+                <p class="text-neutral-300 mb-8 leading-relaxed">
+                    Every item is produced with high-quality materials, ensuring comfort, durability, and vibrant prints. Explore my designs on various platforms, each offering a unique selection of products including t-shirts, hoodies, mugs, phone cases, and more.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/200x200/666/eee?text=Teespring" alt="Teespring Logo/Product" class="w-40 h-40 rounded-lg mb-4 object-cover shadow-lg border border-neutral-700">
+                        <h4 class="text-xl font-dm-mono font-semibold text-white mb-2">Teespring</h4>
+                        <a href="YOUR_TEESPRING_LINK_HERE" target="_blank" class="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-sm rounded-lg transition-colors duration-300 shadow-md">
+                            Shop Teespring
+                        </a>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/200x200/777/ddd?text=TeePublic" alt="TeePublic Logo/Product" class="w-40 h-40 rounded-lg mb-4 object-cover shadow-lg border border-neutral-700">
+                        <h4 class="text-xl font-dm-mono font-semibold text-white mb-2">TeePublic</h4>
+                        <a href="YOUR_TEEPUBLIC_LINK_HERE" target="_blank" class="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-sm rounded-lg transition-colors duration-300 shadow-md">
+                            Shop TeePublic
+                        </a>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/200x200/888/fff?text=Fourthwall" alt="Fourthwall Logo/Product" class="w-40 h-40 rounded-lg mb-4 object-cover shadow-lg border border-neutral-700">
+                        <h4 class="text-xl font-dm-mono font-semibold text-white mb-2">Fourthwall</h4>
+                        <a href="YOUR_FOURTHWALL_LINK_HERE" target="_blank" class="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-sm rounded-lg transition-colors duration-300 shadow-md">
+                            Shop Fourthwall
+                        </a>
+                    </div>
+                </div>
+                <p class="text-neutral-400 font-dm-mono text-sm">
+                    Find unique designs for apparel, accessories, and home goods.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section: Personal introduction -->
+    <section id="about" class="py-16 md:py-24 bg-neutral-800/30">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center md:text-left bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50">
+                <h2 class="text-4xl font-dm-mono font-bold mb-8 text-white">About Akshaya Selvakumar</h2>
+                <img src="https://placehold.co/200x200/555/eee?text=My+Photo" alt="Akshaya Selvakumar's Portrait" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto md:float-right md:ml-8 mb-6 md:mb-0 shadow-lg border-2 border-slate-600">
+                <p class="text-neutral-300 mb-4 leading-relaxed">
+                    Hello! I'm Akshaya Selvakumar, a passionate creative professional with a keen eye for detail and a love for storytelling through various mediums. My journey into the world of technology and art began many years ago, driven by a desire to innovate, design, and capture the essence of moments and ideas.
+                </p>
+                <p class="text-neutral-300 mb-4 leading-relaxed">
+                    With a background as a <strong class="text-white">gold medalist in Computer Science</strong>, I specialize in crafting robust software solutions and contributing to the open-source community. Concurrently, my artistic side flourishes through digital painting and creating unique designs for various products. I also have a deep appreciation for the natural world, expressed through my landscape photography.
+                </p>
+                <p class="text-neutral-300 leading-relaxed">
+                    When I'm not behind the keyboard or the camera, I enjoy exploring new technologies and experimenting with different art forms. Let's connect and create something beautiful together!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section: Form and social links -->
+    <section id="contact" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto bg-neutral-900/50 p-8 md:p-12 rounded-xl shadow-2xl border border-neutral-700/50">
+                <h2 class="text-4xl font-dm-mono font-bold text-center mb-8 text-white">Get In Touch</h2>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-dm-mono text-neutral-300 mb-1">Full Name</label>
+                        <input type="text" name="name" id="name" required class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-md text-white focus:ring-2 focus:ring-slate-500 focus:border-slate-500 outline-none transition-colors" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-dm-mono text-neutral-300 mb-1">Email Address</label>
+                        <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-md text-white focus:ring-2 focus:ring-slate-500 focus:border-slate-500 outline-none transition-colors" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-dm-mono text-neutral-300 mb-1">Message</label>
+                        <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-md text-white focus:ring-2 focus:ring-slate-500 focus:border-slate-500 outline-none transition-colors" placeholder="Your message..."></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-dm-mono text-lg rounded-lg transition-colors duration-300 shadow-md">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-10 text-center">
+                    <p class="text-neutral-400 font-dm-mono">Or reach out via:</p>
+                    <p class="text-white mt-2">akshaya.dev@example.com | +1 (555) 123-4567</p>
+                    <div class="flex justify-center space-x-6 mt-6">
+                        <!-- Social Media Icons (Facebook, Twitter, LinkedIn, Instagram) -->
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors" aria-label="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors" aria-label="Twitter"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.237 3.436 7.736 7.688 7.98V14.89H7.126v-2.97h2.562V9.66c0-2.54 1.53-3.94 3.818-3.94 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.77-1.63 1.562v1.875h2.773l-.443 2.97h-2.33v5.098A9.959 9.959 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors" aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919A48.348 48.348 0 0112 2.163zm0 1.441c-3.116 0-3.474.011-4.691.068-2.695.124-3.912 1.349-4.026 4.026-.057 1.217-.067 1.575-.067 4.691s.01 3.474.067 4.691c.113 2.677 1.331 3.902 4.026 4.026 1.217.057 1.575.067 4.691.067 3.116 0 3.474-.011 4.691-.067 2.695-.124 3.912-1.349 4.026-4.026.057-1.217.067-1.575.067-4.691s-.01-3.474-.067-4.691c-.113-2.677-1.331-3.902-4.026-4.026C15.474 3.614 15.116 3.604 12 3.604zm0 4.467c-2.363 0-4.287 1.924-4.287 4.287s1.924 4.287 4.287 4.287 4.287-1.924 4.287-4.287S14.363 8.071 12 8.071zm0 6.973c-1.483 0-2.687-1.204-2.687-2.687S10.517 9.67 12 9.67s2.687 1.204 2.687 2.687-1.204 2.687-2.687 2.687zm4.808-7.199c-.563 0-1.02.457-1.02 1.02s.457 1.02 1.02 1.02 1.02-.457 1.02-1.02-.457-1.02-1.02-1.02z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-8 bg-neutral-950 text-center">
+        <p class="text-neutral-500 text-sm font-dm-mono">&copy; <span id="currentYear"></span> Akshaya Selvakumar. All Rights Reserved.</p>
+        <p class="text-neutral-600 text-xs font-dm-mono mt-1">Designed with <span class="text-red-500">&hearts;</span> and a touch of //GLYPH_STYLE</p>
+    </footer>
+
+    <!-- Image Modal: Hidden by default, appears on image click -->
+    <div id="imageModal" class="modal fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 invisible">
+        <div class="modal-content bg-neutral-900 p-4 rounded-lg shadow-2xl max-w-3xl max-h-[90vh] w-full transform scale-95 -translate-y-10 relative">
+            <img id="modalImage" src="" alt="Full-size view" class="max-w-full max-h-[80vh] object-contain mx-auto rounded">
+            <button id="closeModal" class="absolute top-3 right-3 text-neutral-300 hover:text-white transition-colors text-3xl font-dm-mono leading-none">&times;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default anchor click behavior
+                const targetId = this.getAttribute('href'); // Get the target section ID
+                const targetElement = document.querySelector(targetId); // Select the target element
+                if (targetElement) {
+                    // Scroll to the target element with smooth animation
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Update current year in the footer dynamically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Image Modal Logic: Handles opening and closing the image lightbox
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModalButton = document.getElementById('closeModal');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        // Add click event listener to each gallery item to open the modal
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src; // Get the source of the clicked image
+                // Modify placeholder URL for higher resolution in modal if desired
+                // This replaces the 600x450 or 400x300 dimensions with 1200x900 for a larger view
+                modalImage.src = imgSrc.replace(/600x450|400x300/, '1200x900');
+                modal.classList.add('open'); // Add 'open' class to show modal
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling when modal is open
+            });
+        });
+
+        // Function to close the modal
+        const closeModal = () => {
+            modal.classList.remove('open'); // Remove 'open' class to hide modal
+            document.body.style.overflow = ''; // Restore background scrolling
+        };
+
+        // Event listener for closing modal via button click
+        closeModalButton.addEventListener('click', closeModal);
+
+        // Event listener for closing modal via Escape key press
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.classList.contains('open')) {
+                closeModal();
+            }
+        });
+
+        // Event listener for closing modal when clicking outside the modal content (on the backdrop)
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) { // Check if the click is directly on the modal backdrop
+                closeModal();
+            }
+        });
+
+        // Simple check for hero background image load for debugging/info
+        const heroSection = document.getElementById('hero');
+        // Extract URL from background-image style, handling linear-gradient part
+        const heroBgUrlMatch = heroSection.style.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/);
+        const heroBgUrl = heroBgUrlMatch ? heroBgUrlMatch[1] : null;
+
+        if (heroBgUrl) {
+            const img = new Image();
+            img.src = heroBgUrl;
+            img.onload = () => console.log('Hero background image loaded successfully.');
+            img.onerror = () => {
+                console.error('Hero background image failed to load. Using fallback gradient.');
+                // Fallback is already handled by CSS, this is just for console info
+            }
+        }
+    </script>
+</body>
+</html>
